@@ -1,0 +1,27 @@
+# https://github.com/flipperdevices/flipperzero-firmware/blob/dev/documentation/AppManifests.md
+App(
+    # Id of the application, used to compile and flash it.
+    appid="id_card",
+    # Name of the application, displayed in menus.
+    name="ID card",
+    # Type of the application, EXTERNAL specify to the compiler to make a .fap application.
+    apptype=FlipperAppType.EXTERNAL,
+    # The entry point of your application, like your main function in C.
+    entry_point="id_card_main",
+    # Stack size allocated to your application.
+    stack_size=1 * 1024,
+    # Applications required by your application, specify the app ID.
+    requires=["gui"],
+    # Order of an app within its group when sorting entries in it.
+    order=10,
+    # C Preprocessor definitions to declare it globally.
+    cdefines=["APP_ID_CARD"],
+    # Directory for your images and assets. Mandatory if you want to use images in your application.
+    fap_icon_assets="images",
+    # Icon for your application, must be 10x10 px.
+    fap_icon="images/app.png",
+    # Category of your application, your executable will be placed in this subdirectory.
+    fap_category="Misc",
+    # Short app description.
+    fap_description="An simple id card application",
+)
